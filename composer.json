@@ -1,0 +1,49 @@
+{
+    "name":        "josantonius/custom-images-grifus",
+    "version":     "1.0.0",
+    "description": "Save external IMDB images to your WordPress site.",
+    "type": "eliasis-module",
+    "keywords": [
+        "Wordpress", 
+        "Plugin", 
+        "Grifus",
+        "Grifus Extension",
+        "Image",
+        "Replace images",
+        "Images"
+    ],
+    "license": "GPL-2.0+",
+    "authors": [
+        {
+            "name":     "Josantonius",
+            "email":    "hello@josantonius.com",
+            "homepage": "https://josantonius.com",
+            "role":     "Developer"
+        }
+    ],
+    "config": {
+        "vendor-dir": "lib/vendor",
+        "preferred-install": "dist"
+    },
+    "minimum-stability": "dev",
+    "support": {
+        "issues": "https://github.com/Josantonius/custom-images-grifus/issues",
+        "forum": "http://stackoverflow.com/tags/custom-images-grifus",
+        "source": "https://github.com/Josantonius/custom-images-grifus"
+    },
+    "require": {
+        "php": "^5.3 || ^7.0",
+        "eliasis-framework/eliasis" : "^1.0.9",
+        "eliasis-framework/module"  : "^1.0.6",
+        "Josantonius/WP_Register"   : "^1.0.2",
+        "Josantonius/Hook"          : "^1.0.4",
+        "Josantonius/WP_Menu"       : "^1.0.0",
+        "Josantonius/WP_Image"      : "^1.0.0",
+        "composer/installers"       : "^1.3.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "ExtensionsForGrifus\\Modules\\CustomImagesGrifus\\" : "src/"
+        }
+    }
+}
