@@ -122,25 +122,13 @@ class CustomImages extends Controller {
      */
     public function addStyles() {
 
-        $styles = [
-            'extensionsForGrifusAdmin',
-            'eliasisMaterial', 
-            'eliasisMaterialIcons'
-        ];
-
         $css = App::ExtensionsForGrifus()->get('assets', 'css');
 
-        foreach ($styles as $style) {
-
-            WP_Register::add('style', $css[$style]);
-        }
+        WP_Register::add('style', $css['extensionsForGrifusAdmin']);
 
         $css = Module::CustomImagesGrifus()->get('assets', 'css');
 
-        WP_Register::add(
-            'style',  
-            $css['customImagesGrifusAdmin']
-        );
+        WP_Register::add('style',  $css['customImagesGrifusAdmin']);
     }
 
     /**
