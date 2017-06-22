@@ -29,11 +29,12 @@
 
                //console.log(response);
 
+               /** Get initial counters */
+               var revised = new Number($("#film-title-badge").attr("data-badge"));
+               revised = revised.toFixed();
+
                if (response.post_id !== 0) {
 
-                  /** Get unitial counters */
-                  var revised = new Number($("#film-title-badge").attr("data-badge"));
-                  revised = revised.toFixed();
                   revised++;
 
                   var imagesAdded = new Number($("#film-images-badge").attr("data-badge"));
@@ -51,9 +52,18 @@
                   ajaxReplace();
 
                } else {
+                  
+                  if (revised > 0) {
 
+                     var revisedText = customImagesGrifusAdmin.added_text;
+                  
+                  } else {
+
+                     var revisedText = customImagesGrifusAdmin.revised_text;
+                  }
+                  
                   /** Set films reviewed */
-                  $(".actual-title").text(customImagesGrifusAdmin.revised_text);
+                  $(".actual-title").text(revisedText);
 
                   /** Change color icons */
                   $("#film-title-badge").addClass("success-icon").removeClass("movie-icon");

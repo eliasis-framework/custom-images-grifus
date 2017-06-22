@@ -15,11 +15,11 @@ msgstr ""
 
 #: modules/custom-images-grifus/src/template/page/custom-images.php:34
 msgid "Reviewing posts..."
-msgstr "Revisando publicaciones..."
+msgstr "Revisando películas..."
 
 #: modules/custom-images-grifus/src/Controller/Admin/Page/CustomImages/CustomImages.php:110
 msgid "Posts were modified"
-msgstr "Publicaciones fueron modificadas"
+msgstr "Posts fueron modificados"
 
 #: modules/custom-images-grifus/config/menu.php:17
 #: modules/custom-images-grifus/config/menu.php:18

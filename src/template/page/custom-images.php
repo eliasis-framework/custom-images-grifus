@@ -31,7 +31,7 @@
                   <div id="process" class="custom-fields">
                      <div id="film-title">
                         <div id="film-title-badge" class="material-icons g-icons movie-icon mdl-badge mdl-badge--overlap" data-badge="0">movie_filter</div>
-                        <span class="actual-title grifus-span"></span><br />
+                        <span class="actual-title grifus-span"><?= __('Reviewing posts...', 'extensions-for-grifus-images') ?></span><br />
                      </div>
                      <div id="film-images">
                         <div id="film-images-badge" class="material-icons g-icons picture-icon mdl-badge mdl-badge--overlap" data-badge="0">panorama</div>

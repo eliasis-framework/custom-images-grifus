@@ -107,6 +107,10 @@ class CustomImages extends Controller {
                 'All post have already been reviewed', 
                 'extensions-for-grifus-images'
             ),
+            'added_text' => __(
+                'Posts were modified', 
+                'extensions-for-grifus-images'
+            ),
             'custom_nonce' => wp_create_nonce('customImagesGrifusAdmin')
         ];
 
