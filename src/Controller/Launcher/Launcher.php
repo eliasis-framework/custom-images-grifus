@@ -31,7 +31,9 @@ class Launcher extends Controller {
      */
     public function init() {
 
-        if (Module::CustomImagesGrifus()->get('state') === 'active') {
+        $state = Module::CustomImagesGrifus()->get('state');
+
+        if ($state === 'active' || $state === 'outdated') {
 
             if (is_admin()) {
 
