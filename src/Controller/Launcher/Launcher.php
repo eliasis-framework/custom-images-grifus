@@ -50,12 +50,8 @@ class Launcher extends Controller {
      * @since 1.0.0
      */
     public function uninstallation() {
-
-        App::id('ExtensionsForGrifus');
         
-        $that = Module::CustomRatingGrifus()->instance('Launcher');
-        
-        $that->model->deletePostMeta();
+        $this->model->deletePostMeta();
     }
 
     /**
