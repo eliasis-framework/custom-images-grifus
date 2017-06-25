@@ -171,9 +171,7 @@ class Image extends Model {
             'numberposts' => $totalPosts,
             'post_status' => 'publish'
         ]);
-        echo json_encode($posts);
 
-        die();
         foreach ($posts as $post) {
 
             if (isset($post->ID)) {
