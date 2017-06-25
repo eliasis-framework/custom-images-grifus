@@ -142,8 +142,6 @@ class CustomImages extends Controller {
      */
     public function render() {
 
-        $this->model->setPostsToReview();
-
         $slug = App::ExtensionsForGrifus()->get('slug');
 
         $rating = App::ExtensionsForGrifus()->instance('Rating')

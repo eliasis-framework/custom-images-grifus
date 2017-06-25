@@ -19,6 +19,7 @@ ExtensionsForGrifus\Modules\CustomImagesGrifus\Controller\Launcher\Launcher->set
 * Added `ExtensionsForGrifus\Modules\CustomImagesGrifus\Model\Admin\Image\Image` class.
 * Added `ExtensionsForGrifus\Modules\CustomImagesGrifus\Model\Admin\Image\Image->setImages()` method.
 * Added `ExtensionsForGrifus\Modules\CustomImagesGrifus\Model\Admin\Image\Image->replaceOldImages()` method.
+* Added `ExtensionsForGrifus\Modules\CustomImagesGrifus\Model\Admin\Image\Image->SetPostsToReview()` method.
 
 * Added `ExtensionsForGrifus\Modules\CustomImagesGrifus\Controller\Admin\Page\CustomImages\CustomImages` class.
 * Added `ExtensionsForGrifus\Modules\CustomImagesGrifus\Controller\Admin\Page\CustomImages\CustomImages->init()` method.
@@ -28,9 +29,6 @@ ExtensionsForGrifus\Modules\CustomImagesGrifus\Controller\Launcher\Launcher->set
 * Added `ExtensionsForGrifus\Modules\CustomImagesGrifus\Controller\Admin\Page\CustomImages\CustomImages->addScripts()` method.
 * Added `ExtensionsForGrifus\Modules\CustomImagesGrifus\Controller\Admin\Page\CustomImages\CustomImages->addStyles()` method.
 * Added `ExtensionsForGrifus\Modules\CustomImagesGrifus\Controller\Admin\Page\CustomImages\CustomImages->render()` method.
-
-* Added `ExtensionsForGrifus\Modules\CustomImagesGrifus\Model\Admin\Page\CustomImages\CustomImages` class.
-* Added `ExtensionsForGrifus\Modules\CustomImagesGrifus\Model\Admin\Page\CustomImages\CustomImages->SetPostsToReview()` method.
 
 * Added `custom-images-grifus/config/add-urls.php` file.
 * Added `custom-images-grifus/config/assets.php` file.

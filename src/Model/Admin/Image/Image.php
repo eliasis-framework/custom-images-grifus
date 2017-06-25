@@ -151,4 +151,40 @@ class Image extends Model {
 
         return $response;
     }
+
+    /**
+     * Set posts to review.
+     * 
+     * @since 1.0.0
+     *
+     * @return void
+     */
+    public function SetPostsToReview() {
+
+        $totalPosts = wp_count_posts();
+
+        $totalPosts = isset($totalPosts->publish) ? $totalPosts->publish : 0;
+
+        $posts = get_posts([
+
+            'post_type'   => 'post', 
+            'numberposts' => $totalPosts,
+            'post_status' => 'publish'
+        ]);
+        echo json_encode($posts);
+
+        die();
+        foreach ($posts as $post) {
+
+            if (isset($post->ID)) {
+
+                add_post_meta(
+                    $post->ID, 
+                    'custom_images_grifus', 
+                    'false', 
+                    true
+                );
+            }
+        }
+    }
 }

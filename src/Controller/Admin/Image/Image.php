@@ -50,6 +50,8 @@ class Image extends Controller {
             die('Busted!');
         }
 
+        $this->model->setPostsToReview();
+
         $response = $this->model->replaceOldImages();
 
         echo json_encode($response);
