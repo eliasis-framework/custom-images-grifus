@@ -1,6 +1,6 @@
 {
     "name":        "josantonius/custom-images-grifus",
-    "version":     "1.0.0",
+    "version":     "1.0.1",
     "description": "Save external IMDB images to your WordPress site.",
     "type": "eliasis-module",
     "keywords": [
@@ -37,8 +37,8 @@
         "eliasis-framework/module"  : "^1.0.7",
         "Josantonius/WP_Register"   : "^1.0.3",
         "Josantonius/WP_Menu"       : "^1.0.3",
-        "Josantonius/WP_Image"      : "^1.0.0",
-        "composer/installers"       : "^1.3.0"
+        "Josantonius/WP_Image"      : "^1.0.1",
+        "composer/installers"       : "^1.4.0"
     },
     "autoload": {
         "psr-4": {

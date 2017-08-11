@@ -8,6 +8,10 @@
  * @link       https://github.com/Josantonius/Custom-Images-Grifus.git
  * @since      1.0.0
  */
+
+use Eliasis\View\View;
+
+$data = View::get();
 ?>
 
 <form enctype="multipart/form-data" id="custom-images-grifus-form" method="post" action="">
@@ -20,8 +24,12 @@
             <div id="spinner-grifus" class="mdl-spinner mdl-spinner--single-color mdl-js-spinner is-active"></div>
          </div>
          <div class="jst-card-subtitle mdl-card__supporting-text mdl-color-text--grey-600">
-                
-            <br /><?= __('Replace all current images', 'extensions-for-grifus-images') ?>
+            <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-images">
+              <input type="checkbox" id="checkbox-images" class="mdl-checkbox__input" <?= ($data['replace-when-add']) ? 'checked' : '' ?>>
+              <span class="mdl-checkbox__label"><?= __('Replace images when adding a new movie', 'extensions-for-grifus-images') ?></span>
+            </label><br /><br />
+            <div class="mdl-card__actions mdl-card--border"></div>
+            <?= __('Replace all current images', 'extensions-for-grifus-images') ?>
             <div id="tt4" class="icon material-icons info-icon">info_outline</div>
             <div class="mdl-tooltip mdl-tooltip--large" for="tt4">
             <?= __('This will replace all external IMDB images and saves them to your WordPress site', 'extensions-for-grifus-images') ?>

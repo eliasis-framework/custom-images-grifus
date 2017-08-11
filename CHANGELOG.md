@@ -1,5 +1,28 @@
 # CHANGELOG
 
+## 1.0.1 - 2017-08-11
+
+* Images attached will now be deleted when a movie is deleted.
+
+* Added a option in the menu to set whether to replace images when adding a new movie.
+
+* Added `ExtensionsForGrifus\Modules\CustomImagesGrifus\Controller\Launcher\Launcher->activation()` method.
+* Added `ExtensionsForGrifus\Modules\CustomImagesGrifus\Controller\Launcher\Launcher->setOptions()` method.
+
+* Deleted `ExtensionsForGrifus\Modules\CustomImagesGrifus\Controller\Admin\Image\Image->setImages()` method.
+
+* Added `ExtensionsForGrifus\Modules\CustomImagesGrifus\Model\Launcher\Launcher->addOptions()` method.
+* Added `ExtensionsForGrifus\Modules\CustomImagesGrifus\Model\Launcher\Launcher->getOptions()` method.
+* Added `ExtensionsForGrifus\Modules\CustomImagesGrifus\Model\Launcher\Launcher->deleteOptions()` method.
+
+* Added `ExtensionsForGrifus\Modules\CustomImagesGrifus\Controller\Admin\Image\Image->replaceWhenAdd()` method.
+* Added `ExtensionsForGrifus\Modules\CustomImagesGrifus\Controller\Admin\Image\Image->deleteAttachedImages()` method.
+
+* Added `ExtensionsForGrifus\Modules\CustomImagesGrifus\Model\Admin\Image\Image->setReplaceWhenAdd()` method.
+* Added `ExtensionsForGrifus\Modules\CustomImagesGrifus\Model\Admin\Image\Image->deleteAttachedImages()` method.
+
+* Added `replaceWhenAdd` method in `custom-images-grifus/public/js/custom-images-grifus-admin.js` file.
+
 ## 1.0.0 - 2017-06-20
 
 * Added `ExtensionsForGrifus\Modules\CustomImagesGrifus\Controller\Launcher\Launcher` class.

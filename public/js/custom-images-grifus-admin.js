@@ -12,6 +12,11 @@
     
    $(document).ready(function () {
 
+      /**
+       * Replace images.
+       *
+       * @since 1.0.0
+       */
       function ajaxReplace() {
 
          $.ajax({
@@ -80,7 +85,37 @@
          });
 
       }
-      
+
+      /**
+       * Replace images when add a post.
+       *
+       * @since 1.0.1
+       */
+      function replaceWhenAdd(state) {
+
+         $.ajax({
+            url: customImagesGrifusAdmin.ajax_url,
+            type: "post",
+            data: {
+               action:        'replaceWhenAdd',
+               state:         state,
+               custom_nonce:  customImagesGrifusAdmin.custom_nonce
+            },
+            success:function(data) {
+
+               var response = JSON.parse(data);
+
+               console.log(response);
+
+            },
+            error: function(errorThrown){
+               //console.log(JSON.stringify(errorThrown));
+            } 
+
+         });
+
+      }
+
       $("#replace-grifus-images").click(function(e) {
 
          e.preventDefault();
@@ -95,6 +130,14 @@
          $("#spinner-grifus").show();
 
          ajaxReplace();
+
+      });
+
+      $("#checkbox-images").click(function(e) {
+
+         var state = ($(this).is(':checked')) ? 1 : 0;
+
+         replaceWhenAdd(state);
 
       });
 

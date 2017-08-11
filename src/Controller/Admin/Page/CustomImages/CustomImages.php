@@ -44,23 +44,6 @@ class CustomImages extends Controller {
     }
 
     /**
-     * Run ajax in panel admin.
-     * 
-     * @since 1.0.0
-     */
-    public function runAjax() {
-
-        add_action(
-
-            'wp_ajax_replaceOldImages', 
-            [
-                Module::CustomImagesGrifus()->instance('Image'), 
-                'replaceOldImages'
-            ]
-        );
-    }
-
-    /**
      * Add submenu for this page.
      *
      * @since 1.0.0
@@ -142,17 +125,29 @@ class CustomImages extends Controller {
      */
     public function render() {
 
-        $slug = App::ExtensionsForGrifus()->get('slug');
-
-        $rating = App::ExtensionsForGrifus()->instance('Rating')
-                                            ->getPluginRating($slug);
-
         $layout = App::ExtensionsForGrifus()->get('path', 'layout');
 
         $page = Module::CustomImagesGrifus()->get('path','page');
 
-        $this->view->renderizate($layout, 'header', $rating);
-        $this->view->renderizate($page,   'custom-images');
+        $replace = Module::CustomImagesGrifus()->get('replace-when-add');
+
+        $data = ['replace-when-add' => $replace];
+
+        $this->view->renderizate($layout, 'header');
+        $this->view->renderizate($page,   'custom-images', $data);
         $this->view->renderizate($layout, 'footer');       
-    } 
+    }
+
+    /**
+     * Run ajax in panel admin.
+     * 
+     * @since 1.0.0
+     */
+    public function runAjax() {
+
+        $Image = Module::CustomImagesGrifus()->instance('Image');
+
+        add_action('wp_ajax_replaceOldImages', [$Image, 'replaceOldImages']);
+        add_action('wp_ajax_replaceWhenAdd',   [$Image, 'replaceWhenAdd']);
+    }
 }

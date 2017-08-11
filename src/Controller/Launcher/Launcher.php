@@ -27,7 +27,7 @@ class Launcher extends Controller {
      * 
      * @since 1.0.0
      *
-     * @return
+     * @return void
      */
     public function init() {
 
@@ -45,13 +45,29 @@ class Launcher extends Controller {
     }
 
     /**
+     * Module activation hook. Executed when module is activated.
+     * 
+     * @since 1.0.1
+     *
+     * @return void
+     */
+    public function activation() {
+
+        $this->model->addOptions();
+    }
+
+    /**
      * Module uninstallation hook. Executed when module is uninstalled.
      * 
      * @since 1.0.0
+     *
+     * @return void
      */
     public function uninstallation() {
         
         $this->model->deletePostMeta();
+
+        $this->model->deleteOptions();
     }
 
     /**
@@ -60,8 +76,12 @@ class Launcher extends Controller {
      * @since 1.0.0
      * 
      * @uses add_action() → hooks a function on to a specific action
+     *
+     * @return void
      */
     public function admin() {
+
+        $this->setOptions();
 
         add_action('init', [$this, 'setLanguage']);
                 
@@ -70,14 +90,39 @@ class Launcher extends Controller {
         $pages = Module::CustomImagesGrifus()->get('pages');
 
         App::main()->setMenus($pages, $namespace['admin-page']);
+        
+        $Image = Module::CustomImagesGrifus()->instance('Image');
 
-        $this->setImages();
+        add_action('wp_insert_post', [$Image, 'setImages'], 10, 3);
+
+        add_action('before_delete_post', [$Image,'deleteAttachedImages'], 10, 1);
+    }
+
+    /**
+     * Set database module options.
+     *
+     * @since 1.0.1
+     *
+     * @return void
+     */
+    public function setOptions() {
+
+        $slug = Module::CustomImagesGrifus()->get('slug');
+
+        $options = $this->model->getOptions();
+
+        foreach ($options as $option => $value) {
+            
+            Module::CustomImagesGrifus()->set($option, $value);
+        }
     }
 
     /**
      * Set plugin textdomain.
      * 
      * @since 1.0.0
+     *
+     * @return void
      */
     public function setLanguage() {
 
@@ -90,25 +135,5 @@ class Launcher extends Controller {
         $path = $pSlug . $DS .'modules' .$DS. $mSlug .$DS. 'languages' . $DS;
 
         load_plugin_textdomain($pSlug . '-images', false, $path);
-    }
-
-    /**
-     * Save images to the server when post has been added or edited.
-     * 
-     * @since 1.0.0
-     */
-    public function setImages() {
-
-        add_action('wp_insert_post', function() {
-
-            App::id('ExtensionsForGrifus');
-
-            if (App::main()->isAfterInsertPost()) {
-
-                $Image = Module::CustomImagesGrifus()->instance('Image');
-
-                $Image->setImages();
-            }
-        });
     }
 }

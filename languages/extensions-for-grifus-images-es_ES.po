@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Extensions For Grifus\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-06-22 11:40+0000\n"
-"PO-Revision-Date: 2017-06-22 11:42+0000\n"
+"POT-Creation-Date: 2017-08-11 00:44+0000\n"
+"PO-Revision-Date: 2017-08-11 00:46+0000\n"
 "Last-Translator: Josantonius <hello@josantonius.com>\n"
 "Language-Team: Spanish (Spain)\n"
 "Language: es-ES\n"
@@ -13,25 +13,21 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Loco - https://localise.biz/"
 
-#: modules/custom-images-grifus/src/template/page/custom-images.php:34
-msgid "Reviewing posts..."
-msgstr "Revisando publicaciones..."
-
-#: modules/custom-images-grifus/src/Controller/Admin/Page/CustomImages/CustomImages.php:110
-msgid "Posts were modified"
-msgstr "Publicaciones fueron modificadas"
+#: modules/custom-images-grifus/src/template/page/custom-images.php:29
+msgid "Replace images when adding a new movie"
+msgstr "Reemplazar imágenes al agregar nueva película"
 
 #: modules/custom-images-grifus/config/menu.php:17
 #: modules/custom-images-grifus/config/menu.php:18
-#: modules/custom-images-grifus/src/template/page/custom-images.php:18
+#: modules/custom-images-grifus/src/template/page/custom-images.php:22
 msgid "Custom Images"
 msgstr "Custom Images"
 
-#: modules/custom-images-grifus/src/template/page/custom-images.php:24
+#: modules/custom-images-grifus/src/template/page/custom-images.php:32
 msgid "Replace all current images"
 msgstr "Reemplazar imágenes"
 
-#: modules/custom-images-grifus/src/template/page/custom-images.php:27
+#: modules/custom-images-grifus/src/template/page/custom-images.php:35
 msgid ""
 "This will replace all external IMDB images and saves them to your WordPress "
 "site"
@@ -39,17 +35,25 @@ msgstr ""
 "Esto reemplazará todas las imágenes externas de IMDB y las guardará en tu "
 "sitio de WordPress"
 
-#: modules/custom-images-grifus/src/template/page/custom-images.php:38
+#: modules/custom-images-grifus/src/template/page/custom-images.php:42
+msgid "Reviewing posts..."
+msgstr "Revisando publicaciones..."
+
+#: modules/custom-images-grifus/src/template/page/custom-images.php:46
 msgid "Images were replaced"
 msgstr "Imágenes fueron reemplazadas"
 
-#: modules/custom-images-grifus/src/template/page/custom-images.php:43
+#: modules/custom-images-grifus/src/template/page/custom-images.php:51
 msgid "Replace all"
 msgstr "Reemplazar todo"
 
-#: modules/custom-images-grifus/src/Controller/Admin/Page/CustomImages/CustomImages.php:106
+#: modules/custom-images-grifus/src/Controller/Admin/Page/CustomImages/CustomImages.php:89
 msgid "All post have already been reviewed"
 msgstr "Las publicaciones ya fueron revisadas"
+
+#: modules/custom-images-grifus/src/Controller/Admin/Page/CustomImages/CustomImages.php:93
+msgid "Posts were modified"
+msgstr "Publicaciones fueron modificadas"
 
 #. Name of the plugin
 msgid "Extensions For Grifus"

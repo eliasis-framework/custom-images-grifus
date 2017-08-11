@@ -13,7 +13,7 @@ return [
 
 	'id'          => 'CustomImagesGrifus',
     'name'        => 'Custom Images',
-    'version'     => '1.0.0',
+    'version'     => '1.0.1',
     'description' => __('Save external IMDB images to your WordPress site.', 'extensions-for-grifus'),
     'state'       => 'uninstalled',
     'category'    => 'wp-plugin-extension',

@@ -30,18 +30,9 @@ class Image extends Model {
      *
      * @return string → posts edited number
      */
-    public function setImages($postID = 0) {
-
-        global $post;
-
-        $postID = ($postID) ? $postID : $post->ID;
+    public function setImages($postID) {
 
         if (!$postID || is_null($postID)) { return 0; }
-
-        if (get_post_meta($postID, 'custom_images_grifus') === 'true') {
-
-            return 0;
-        }
 
         update_post_meta($postID, 'custom_images_grifus', 'true');
 
@@ -159,7 +150,7 @@ class Image extends Model {
      *
      * @return void
      */
-    public function SetPostsToReview() {
+    public function setPostsToReview() {
 
         $totalPosts = wp_count_posts();
 
@@ -184,5 +175,34 @@ class Image extends Model {
                 );
             }
         }
+    }
+
+    /**
+     * Set state for replace images when added a movie.
+     * 
+     * @since 1.0.1
+     *
+     * @param string  $slug  → module slug
+     * @param boolean $state → restart when added a movie
+     *
+     * @return void
+     */
+    public function setReplaceWhenAdd($slug, $state) {
+
+        update_option($slug . '-replace-when-add', $state);
+    }
+
+    /**
+     * Delete attached images.
+     * 
+     * @since 1.0.1
+     *
+     * @param int $postID → post ID
+     *
+     * @return int → attachments deleted
+     */
+    public function deleteAttachedImages($postID) {
+
+        return WP_Image::deleteAttachedImages($postID);
     }
 }

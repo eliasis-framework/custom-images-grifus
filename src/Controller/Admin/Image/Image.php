@@ -11,7 +11,9 @@
 
 namespace ExtensionsForGrifus\Modules\CustomImagesGrifus\Controller\Admin\Image;
 
-use Eliasis\Controller\Controller;
+use Eliasis\App\App,
+    Eliasis\Module\Module,
+    Eliasis\Controller\Controller;
     
 /**
  * Image controller
@@ -21,17 +23,30 @@ use Eliasis\Controller\Controller;
 class Image extends Controller {
 
     /**
-     * Find IMDB images, save them and replace them in posts.
+     * Save images to the server when post has been added or edited.
      * 
      * @since 1.0.0
      *
-     * @param int $postID → post id
+     * @param int $postID     → post ID
+     * @param object $post    → (WP_Post) post object
+     * @param boolean $update → true if update post
      *
-     * @return string → posts edited number.
+     * @return void
      */
-    public function setImages($postID = 0) {
+    public function setImages($postID, $post, $update) {
 
-        return $this->model->setImages($postID);
+        App::id('ExtensionsForGrifus');
+
+        if (Module::CustomImagesGrifus()->get('replace-when-add')) { 
+
+            $isInsertPost = App::main()->isAfterInsertPost($post, $update);
+            $isUpdatePost = App::main()->isAfterUpdatePost($post, $update);
+
+            if ($isInsertPost || $isUpdatePost) {
+
+                $this->model->setImages($postID);
+            }
+        }
     }
 
     /**
@@ -57,5 +72,51 @@ class Image extends Controller {
         echo json_encode($response);
 
         die();
+    }
+
+    /**
+     * Replace image when added a movie.
+     * 
+     * @since 1.0.1
+     *
+     * @return void
+     */
+    public function replaceWhenAdd() {
+
+        $state = isset($_POST['state']) ? $_POST['state'] : null;
+
+        $nonce = wp_verify_nonce(
+
+            isset($_POST['custom_nonce']) ? $_POST['custom_nonce'] : false, 
+            'customImagesGrifusAdmin'
+        );
+
+        if (!$nonce || is_null($state)) { die; }
+
+        App::id('ExtensionsForGrifus');
+
+        $slug = Module::CustomImagesGrifus()->get('slug');
+
+        $this->model->setReplaceWhenAdd($slug, $state);
+
+        $response = ['replace-when-add' => $state];
+
+        echo json_encode($response);
+
+        die();
+    }
+
+    /**
+     * Delete attached images.
+     * 
+     * @since 1.0.1
+     *
+     * @param int $postID → post ID
+     *
+     * @return int → attachments deleted
+     */
+    public function deleteAttachedImages($postID) {
+
+        return $this->model->deleteAttachedImages($postID);
     }
 }
