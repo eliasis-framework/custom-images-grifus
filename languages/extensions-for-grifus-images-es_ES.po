@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Extensions For Grifus\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-08-11 00:44+0000\n"
-"PO-Revision-Date: 2017-08-11 00:46+0000\n"
+"POT-Creation-Date: 2017-09-03 16:19+0000\n"
+"PO-Revision-Date: 2017-09-03 16:25+0000\n"
 "Last-Translator: Josantonius <hello@josantonius.com>\n"
 "Language-Team: Spanish (Spain)\n"
 "Language: es-ES\n"
@@ -13,15 +13,20 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Loco - https://localise.biz/"
 
-#: modules/custom-images-grifus/src/template/page/custom-images.php:29
-msgid "Replace images when adding a new movie"
-msgstr "Reemplazar imágenes al agregar nueva película"
+#: modules/custom-images-grifus/config/module-info.php:15
+msgid "Save external IMDB images to your WordPress site."
+msgstr "Aloja las imágenes de IMDB en vez de utilizar enlaces externos."
 
+#: modules/custom-images-grifus/config/module-info.php:14
 #: modules/custom-images-grifus/config/menu.php:17
 #: modules/custom-images-grifus/config/menu.php:18
 #: modules/custom-images-grifus/src/template/page/custom-images.php:22
 msgid "Custom Images"
 msgstr "Custom Images"
+
+#: modules/custom-images-grifus/src/template/page/custom-images.php:29
+msgid "Replace images when adding a new movie"
+msgstr "Reemplazar imágenes al agregar nueva película"
 
 #: modules/custom-images-grifus/src/template/page/custom-images.php:32
 msgid "Replace all current images"
