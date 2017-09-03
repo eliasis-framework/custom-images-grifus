@@ -1,0 +1,78 @@
+{
+   "id": "CustomImagesGrifus",
+   "name": "Custom Images",
+   "version": "1.0.2",
+   "description": "Save external IMDB images to your WordPress site.",
+   "state": "uninstalled",
+   "category": "wp-plugin-extension",
+   "uri": "https://github.com/Josantonius/Custom-Images-Grifus.git",
+   "author": "Josantonius",
+   "author-uri": "https://josantonius.com/",
+   "license": "GPL-2.0+",
+   "hooks-controller": "Launcher",
+   "url-import": "https://raw.githubusercontent.com/Josantonius/Custom-Images-Grifus/master/",
+   "installation-files": {
+      "custom-images-grifus": {
+         "0": "custom-images-grifus.jsond",
+         "1": "LICENSE",
+         "2": "composer.json",
+         "config": [
+            "add-urls.php",
+            "assets.php",
+            "menu.php",
+            "module-info.php",
+            "namespaces.php",
+            "pages.php",
+            "paths.php",
+            "set-hooks.php"
+         ],
+         "languages": [
+            "extensions-for-grifus-images-es_ES.mo",
+            "extensions-for-grifus-images-es_ES.po"
+         ],
+         "public": {
+            "css": [
+               "custom-images-grifus-admin.css"
+            ],
+            "images": [
+               "custom-images-grifus.png"
+            ],
+            "js": [
+               "custom-images-grifus-admin.js"
+            ]
+         },
+         "src": {
+            "Controller": {
+               "Launcher": [
+                  "Launcher.php"
+               ],
+               "Admin": {
+                  "Page": {
+                     "CustomImages": [
+                        "CustomImages.php"
+                     ]
+                  },
+                  "Image": [
+                     "Image.php"
+                  ]
+               }
+            },
+            "Model": {
+               "Launcher": [
+                  "Launcher.php"
+               ],
+               "Admin": {
+                  "Image": [
+                     "Image.php"
+                  ]
+               }
+            },
+            "template": {
+               "page": [
+                  "custom-images.php"
+               ]
+            }
+         }
+      }
+   }
+}

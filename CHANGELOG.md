@@ -1,5 +1,15 @@
 # CHANGELOG
 
+## 1.0.2 - 2017-09-03
+
+* The PHP configuration file was replaced by a json file.
+
+* Deleted `custom-images-grifus/custom-images-grifus.php` file.
+
+* Added `custom-images-grifus/custom-images-grifus.jsond` file.
+
+* Added `custom-images-grifus/config/module-info.php` file.
+
 ## 1.0.1 - 2017-08-11
 
 * Images attached will now be deleted when a movie is deleted.
