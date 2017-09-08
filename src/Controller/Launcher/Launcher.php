@@ -11,7 +11,7 @@
 
 namespace ExtensionsForGrifus\Modules\CustomImagesGrifus\Controller\Launcher;
 
-use Eliasis\Module\Module,
+use Eliasis\Complement\Type\Module\Module,
     Eliasis\Controller\Controller,
     Eliasis\App\App;
     

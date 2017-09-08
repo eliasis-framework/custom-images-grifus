@@ -9,7 +9,7 @@
  * @since      1.0.0
  */
 
-use Eliasis\Module\Module;
+use Eliasis\Complement\Type\Module\Module;
 
 $css = Module::CustomImagesGrifus()->get('url', 'css');
 $js  = Module::CustomImagesGrifus()->get('url', 'js');

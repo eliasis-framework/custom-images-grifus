@@ -1,7 +1,7 @@
 {
    "id": "CustomImagesGrifus",
    "name": "Custom Images",
-   "version": "1.0.2",
+   "version": "1.0.3",
    "description": "Save external IMDB images to your WordPress site.",
    "state": "uninstalled",
    "category": "wp-plugin-extension",

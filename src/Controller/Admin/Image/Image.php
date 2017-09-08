@@ -12,8 +12,8 @@
 namespace ExtensionsForGrifus\Modules\CustomImagesGrifus\Controller\Admin\Image;
 
 use Eliasis\App\App,
-    Eliasis\Module\Module,
-    Eliasis\Controller\Controller;
+    Eliasis\Controller\Controller,
+    Eliasis\Complement\Type\Module\Module;
     
 /**
  * Image controller

@@ -14,8 +14,8 @@ namespace ExtensionsForGrifus\Modules\CustomImagesGrifus\Controller\Admin\Page\C
 use Josantonius\WP_Register\WP_Register,
     Josantonius\WP_Menu\WP_Menu,
     Eliasis\App\App,
-    Eliasis\Module\Module,
-    Eliasis\Controller\Controller;
+    Eliasis\Controller\Controller,
+    Eliasis\Complement\Type\Module\Module;
 
 /**
  * Handler Custom Images Grifus page.
