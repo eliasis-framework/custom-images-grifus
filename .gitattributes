@@ -1,7 +1,7 @@
 /lib export-ignore
 /node_modules export-ignore
 /resources export-ignore
-/public/sass export-
+/public/sass export-ignore
 /public/css/source/custom-images-grifus-admin.css.map export-ignore
 /public/css/custom-images-grifus-admin.min.map export-ignore
 .gitattributes export-ignore
