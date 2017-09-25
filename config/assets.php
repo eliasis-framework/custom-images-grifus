@@ -21,7 +21,7 @@ return [
         'js' => [
             'customImagesGrifusAdmin' => [
                 'name'      => 'customImagesGrifusAdmin',
-                'url'       => $js . 'custom-images-grifus-admin.js',
+                'url'       => $js . 'custom-images-grifus-admin.min.js',
                 'place'     => 'admin',
                 'deps'      => ['jquery'],
                 'version'   => '1.0.0',
@@ -35,7 +35,7 @@ return [
         'css' => [
             'customImagesGrifusAdmin' => [
                 'name'      => 'customImagesGrifusAdmin',
-                'url'       => $css . 'custom-images-grifus-admin.css',
+                'url'       => $css . 'custom-images-grifus-admin.min.css',
                 'place'     => 'admin',
                 'deps'      => [],
                 'version'   => '1.0.0',

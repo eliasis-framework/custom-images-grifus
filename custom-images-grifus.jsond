@@ -1,7 +1,7 @@
 {
    "id": "CustomImagesGrifus",
    "name": "Custom Images",
-   "version": "1.0.3",
+   "version": "1.0.4",
    "description": {
       "en": "Save external IMDB images to your WordPress site.",
       "es": "Aloja las imágenes de IMDB en vez de utilizar enlaces externos."
@@ -33,15 +33,21 @@
             "extensions-for-grifus-images-es_ES.po"
          ],
          "public": {
-            "css": [
-               "custom-images-grifus-admin.css"
-            ],
+            "css": {
+               "0": "custom-images-grifus-admin.min.css",
+               "source": [
+                  "custom-images-grifus-admin.css"
+               ]
+            },
             "images": [
                "custom-images-grifus.png"
             ],
-            "js": [
-               "custom-images-grifus-admin.js"
-            ]
+            "js": {
+               "0": "custom-images-grifus-admin.min.js",
+               "source": [
+                  "custom-images-grifus-admin.js"
+               ]
+            }
          },
          "src": {
             "Controller": {
