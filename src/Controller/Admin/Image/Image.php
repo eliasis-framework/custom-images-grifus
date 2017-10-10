@@ -58,9 +58,9 @@ class Image extends Controller {
      */
     public function replaceOldImages() {
 
-        $nonce = isset($_POST['custom_nonce']) ? $_POST['custom_nonce'] : '';
+        $nonce = isset($_POST['nonce']) ? $_POST['nonce'] : '';
 
-        if (!wp_verify_nonce($nonce, 'customImagesGrifusAdmin')) {
+        if (!wp_verify_nonce($nonce, 'eliasis')) {
             
             die('Busted!');
         }
@@ -87,8 +87,8 @@ class Image extends Controller {
 
         $nonce = wp_verify_nonce(
 
-            isset($_POST['custom_nonce']) ? $_POST['custom_nonce'] : false, 
-            'customImagesGrifusAdmin'
+            isset($_POST['nonce']) ? $_POST['nonce'] : '', 
+            'eliasis'
         );
 
         if (!$nonce || is_null($state)) { die; }

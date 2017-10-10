@@ -94,7 +94,6 @@ class CustomImages extends Controller {
                 'Posts were modified', 
                 'extensions-for-grifus-images'
             ),
-            'custom_nonce' => wp_create_nonce('customImagesGrifusAdmin')
         ];
 
         $js['params'] = array_merge($js['params'], $params);

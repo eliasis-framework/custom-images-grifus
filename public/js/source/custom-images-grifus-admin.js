@@ -20,11 +20,11 @@
       function ajaxReplace() {
 
          $.ajax({
-            url: customImagesGrifusAdmin.ajax_url,
+            url: eliasis.ajax_url,
             type: "post",
             data: {
                action:        'replaceOldImages',
-               custom_nonce : customImagesGrifusAdmin.custom_nonce
+               custom_nonce : eliasis.custom_nonce
             },
             success:function(data) {
 
@@ -60,11 +60,11 @@
                   
                   if (revised > 0) {
 
-                     var revisedText = customImagesGrifusAdmin.added_text;
+                     var revisedText = eliasis.added_text;
                   
                   } else {
 
-                     var revisedText = customImagesGrifusAdmin.revised_text;
+                     var revisedText = eliasis.revised_text;
                   }
                   
                   /** Set films reviewed */
@@ -94,12 +94,12 @@
       function replaceWhenAdd(state) {
 
          $.ajax({
-            url: customImagesGrifusAdmin.ajax_url,
+            url: eliasis.ajax_url,
             type: "post",
             data: {
                action:        'replaceWhenAdd',
                state:         state,
-               custom_nonce:  customImagesGrifusAdmin.custom_nonce
+               custom_nonce:  eliasis.custom_nonce
             },
             success:function(data) {
 
