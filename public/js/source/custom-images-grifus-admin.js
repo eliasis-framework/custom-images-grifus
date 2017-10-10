@@ -23,8 +23,8 @@
             url: eliasis.ajax_url,
             type: "post",
             data: {
-               action:        'replaceOldImages',
-               custom_nonce : eliasis.custom_nonce
+               action: 'replaceOldImages',
+               nonce : eliasis.nonce
             },
             success:function(data) {
 
