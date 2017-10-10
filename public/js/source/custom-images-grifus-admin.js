@@ -97,9 +97,9 @@
             url: eliasis.ajax_url,
             type: "post",
             data: {
-               action:        'replaceWhenAdd',
-               state:         state,
-               custom_nonce:  eliasis.custom_nonce
+               action:  'replaceWhenAdd',
+               state:   state,
+               nonce:   eliasis.nonce
             },
             success:function(data) {
 
