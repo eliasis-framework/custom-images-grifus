@@ -72,7 +72,7 @@ class Image extends Controller {
         echo json_encode($response);
 
         die();
-    }
+    } 
 
     /**
      * Replace image when added a movie.
