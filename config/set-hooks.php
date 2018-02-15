@@ -1,22 +1,23 @@
 <?php
 /**
  * Custom Images Grifus · Extensions For Grifus
- * 
- * @author     Josantonius - hello@josantonius.com
- * @copyright  Copyright (c) 2017
- * @license    GPL-2.0+
- * @link       https://github.com/Josantonius/Custom-Images-Grifus.git
- * @since      1.0.0
+ *
+ * @author    Josantonius <hello@josantonius.com>
+ * @package   Josantonius/Custom-Images-Grifus
+ * @copyright 2017 - 2018 (c) Josantonius - Custom Images Grifus
+ * @license   GPL-2.0+
+ * @link      https://github.com/Josantonius/Custom-Images-Grifus.git
+ * @since     1.0.0
  */
 
-use Eliasis\Complement\Type\Module\Module;
+use Eliasis\Complement\Type\Module;
 
-$namespace = Module::CustomImagesGrifus()->get('namespaces', 'controller');
+$namespace = Module::CustomImagesGrifus()->getOption( 'namespaces', 'controller' );
 
 return [
 
 	'hooks' => [
 
-		['launch-modules', [$namespace.'Launcher\\Launcher', 'init'], 8, 0],
-	]
+		[ 'launch-modules', [ $namespace . 'Launcher', 'init' ], 8, 0 ],
+	],
 ];

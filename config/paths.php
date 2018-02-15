@@ -1,26 +1,25 @@
 <?php
 /**
  * Custom Images Grifus · Extensions For Grifus
- * 
- * @author     Josantonius - hello@josantonius.com
- * @copyright  Copyright (c) 2017
- * @license    GPL-2.0+
- * @link       https://github.com/Josantonius/Custom-Images-Grifus.git
- * @since      1.0.0
+ *
+ * @author    Josantonius <hello@josantonius.com>
+ * @package   Josantonius/Custom-Images-Grifus
+ * @copyright 2017 - 2018 (c) Josantonius - Custom Images Grifus
+ * @license   GPL-2.0+
+ * @link      https://github.com/Josantonius/Custom-Images-Grifus.git
+ * @since     1.0.0
  */
 
-use Eliasis\App\App,
-	Eliasis\Complement\Type\Module\Module;
+use Eliasis\Framework\App;
+use Eliasis\Complement\Type\Module;
 
-$DS = App::DS;
-
-$ROOT = $ROOT = Module::CustomImagesGrifus()->get('path', 'root');
+$root_path = Module::CustomImagesGrifus()->getOption( 'path', 'root' );
 
 return [
 
-    'path' => [
+	'path' => [
 
-        'page'      => $ROOT.'src'.$DS.'template'.$DS.'page'.$DS,
-        'languages' => $ROOT.'languages'.$DS,
-    ],
+		'page'      => $root_path . 'src/template/page/',
+		'languages' => $root_path . 'languages/',
+	],
 ];
