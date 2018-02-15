@@ -50,30 +50,20 @@
             }
          },
          "src": {
-            "Controller": {
-               "Launcher": [
-                  "Launcher.php"
-               ],
-               "Admin": {
-                  "Page": {
-                     "CustomImages": [
-                        "CustomImages.php"
-                     ]
-                  },
-                  "Image": [
-                     "Image.php"
+            "controller": {
+               "0": "class-launcher.php",
+               "admin": {
+                  "0": "class-image.php",
+                  "page": [
+                     "class-custom-images.php"
                   ]
                }
             },
-            "Model": {
-               "Launcher": [
-                  "Launcher.php"
-               ],
-               "Admin": {
-                  "Image": [
-                     "Image.php"
-                  ]
-               }
+            "model": {
+               "0": "class-launcher.php",
+               "admin": [
+                  "class-image.php"
+               ]
             },
             "template": {
                "page": [
