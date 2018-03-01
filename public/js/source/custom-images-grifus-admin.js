@@ -14,9 +14,9 @@
    $(document).ready(function () {
 
       if (typeof eliasis !== 'undefined') {
-         var copy_images_grifus = eliasis;
+         var custom_images_grifus_admin = eliasis;
       } else {
-         var copy_images_grifus = customImagesGrifusAdmin;
+         var custom_images_grifus_admin = customImagesGrifusAdmin;
       }
 
       /**
@@ -27,11 +27,11 @@
       function ajaxReplace() {
 
          $.ajax({
-            url: copy_images_grifus.ajax_url,
+            url: custom_images_grifus_admin.ajax_url,
             type: "post",
             data: {
                action: 'replace_old_images',
-               nonce : copy_images_grifus.nonce
+               nonce : custom_images_grifus_admin.nonce
             },
             success:function(data) {
 
@@ -66,9 +66,9 @@
                } else {
                   
                   if (revised > 0) {
-                     var revisedText = copy_images_grifus.added_text;
+                     var revisedText = custom_images_grifus_admin.added_text;
                   } else {
-                     var revisedText = copy_images_grifus.revised_text;
+                     var revisedText = custom_images_grifus_admin.revised_text;
                   }
                   
                   /** Set films reviewed */
@@ -98,12 +98,12 @@
       function replaceWhenAdd(state) {
 
          $.ajax({
-            url: copy_images_grifus.ajax_url,
+            url: custom_images_grifus_admin.ajax_url,
             type: "post",
             data: {
                action:  'replace_when_add',
                state:   state,
-               nonce:   copy_images_grifus.nonce
+               nonce:   custom_images_grifus_admin.nonce
             },
             success:function(data) {
                var response = JSON.parse(data);
