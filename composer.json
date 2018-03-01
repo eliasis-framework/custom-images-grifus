@@ -1,5 +1,5 @@
 {
-    "name":        "josantonius/custom-images-grifus",
+    "name":        "eliasis-framework/custom-images-grifus",
     "description": "Save external IMDB images to your WordPress site.",
     "type": "eliasis-module",
     "keywords": [
@@ -25,9 +25,9 @@
     },
     "minimum-stability": "dev",
     "support": {
-        "issues": "https://github.com/Josantonius/custom-images-grifus/issues",
+        "issues": "https://github.com/eliasis-framework/custom-images-grifus/issues",
         "forum": "http://stackoverflow.com/tags/custom-images-grifus",
-        "source": "https://github.com/Josantonius/custom-images-grifus"
+        "source": "https://github.com/eliasis-framework/custom-images-grifus"
     },
     "require": {
         "php": "^5.3 || ^7.0",
