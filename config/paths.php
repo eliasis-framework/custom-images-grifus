@@ -16,9 +16,7 @@ use Eliasis\Complement\Type\Module;
 $root_path = Module::CustomImagesGrifus()->getOption( 'path', 'root' );
 
 return [
-
 	'path' => [
-
 		'page'      => $root_path . 'src/template/page/',
 		'languages' => $root_path . 'languages/',
 	],

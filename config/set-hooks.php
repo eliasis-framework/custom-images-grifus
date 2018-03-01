@@ -15,9 +15,7 @@ use Eliasis\Complement\Type\Module;
 $namespace = Module::CustomImagesGrifus()->getOption( 'namespaces', 'controller' );
 
 return [
-
 	'hooks' => [
-
 		[ 'launch-modules', [ $namespace . 'Launcher', 'init' ], 8, 0 ],
 	],
 ];

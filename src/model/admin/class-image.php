@@ -3,10 +3,10 @@
  * Custom Images Grifus · Extensions For Grifus
  *
  * @author    Josantonius <hello@josantonius.com>
- * @package   Josantonius/Custom-Images-Grifus
+ * @package   eliasis-framework/custom-images-grifus
  * @copyright 2017 - 2018 (c) Josantonius - Custom Images Grifus
  * @license   GPL-2.0+
- * @link      https://github.com/Josantonius/Custom-Images-Grifus.git
+ * @link      https://github.com/eliasis-framework/custom-images-grifus.git
  * @since     1.0.0
  */
 
@@ -33,7 +33,6 @@ class Image extends Model {
 			return 0; }
 
 		update_post_meta( $post_id, 'custom_images_grifus', 'true' );
-
 		$count = 0;
 		$tmdb = 'image.tmdb.org';
 		$poster = get_post_meta( $post_id, 'poster_url', true );

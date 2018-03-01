@@ -3,10 +3,10 @@
  * Custom Images Grifus · Extensions For Grifus
  *
  * @author    Josantonius <hello@josantonius.com>
- * @package   Josantonius/Custom-Images-Grifus
+ * @package   eliasis-framework/custom-images-grifus
  * @copyright 2017 - 2018 (c) Josantonius - Custom Images Grifus
  * @license   GPL-2.0+
- * @link      https://github.com/Josantonius/Custom-Images-Grifus.git
+ * @link      https://github.com/eliasis-framework/custom-images-grifus.git
  * @since     1.0.0
  */
 
@@ -41,7 +41,7 @@ class CustomImages extends Controller {
 	/**
 	 * Add submenu for this page.
 	 */
-	public function setSubmenu() {
+	public function set_submenu() {
 
 		WP_Menu::add(
 			'submenu',
@@ -50,8 +50,8 @@ class CustomImages extends Controller {
 				'custom-images-grifus'
 			),
 			[ $this, 'render' ],
-			'add_styles',
-			'add_scripts'
+			[ $this, 'add_styles' ],
+			[ $this, 'add_scripts' ]
 		);
 	}
 
@@ -68,7 +68,6 @@ class CustomImages extends Controller {
 		$js = App::EFG()->getOption( 'assets', 'js' );
 
 		foreach ( $scripts as $script ) {
-
 			WP_Register::add( 'script', $js[ $script ] );
 		}
 
@@ -133,7 +132,7 @@ class CustomImages extends Controller {
 
 		$image = Module::CustomImagesGrifus()->getControllerInstance( 'Image' );
 
-		add_action( 'wp_ajax_replaceOldImages', [ $image, 'replaceOldImages' ] );
-		add_action( 'wp_ajax_replaceWhenAdd', [ $image, 'replaceWhenAdd' ] );
+		add_action( 'wp_ajax_replace_old_images', [ $image, 'replace_old_images' ] );
+		add_action( 'wp_ajax_replace_when_add', [ $image, 'replace_when_add' ] );
 	}
 }

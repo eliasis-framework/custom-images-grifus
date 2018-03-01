@@ -3,10 +3,10 @@
  * Custom Images Grifus · Extensions For Grifus
  *
  * @author    Josantonius <hello@josantonius.com>
- * @package   Josantonius/Custom-Images-Grifus
+ * @package   eliasis-framework/custom-images-grifus
  * @copyright 2017 - 2018 (c) Josantonius - Custom Images Grifus
  * @license   GPL-2.0+
- * @link      https://github.com/Josantonius/Custom-Images-Grifus.git
+ * @link      https://github.com/eliasis-framework/custom-images-grifus.git
  * @since     1.0.0
  */
 
@@ -50,7 +50,7 @@ class Image extends Controller {
 
 		$nonce = isset( $_POST['nonce'] ) ? $_POST['nonce'] : '';
 
-		if ( ! wp_verify_nonce( $nonce, 'eliasis' ) ) {
+		if ( ! wp_verify_nonce( $nonce, 'eliasis' ) && ! wp_verify_nonce( $nonce, 'customImagesGrifusAdmin' ) ) {
 			die( 'Busted!' );
 		}
 
@@ -70,13 +70,11 @@ class Image extends Controller {
 	public function replace_when_add() {
 
 		$state = isset( $_POST['state'] ) ? $_POST['state'] : null;
-		$nonce = wp_verify_nonce(
-			isset( $_POST['nonce'] ) ? $_POST['nonce'] : '',
-			'eliasis'
-		);
+		$nonce = isset( $_POST['nonce'] ) ? $_POST['nonce'] : '';
 
-		if ( ! $nonce || is_null( $state ) ) {
-			die; }
+		if ( ! wp_verify_nonce( $nonce, 'eliasis' ) && ! wp_verify_nonce( $nonce, 'customImagesGrifusAdmin' ) ) {
+			die( 'Busted!' );
+		}
 
 		App::setCurrentID( 'EFG' );
 		$slug = Module::CustomImagesGrifus()->getOption( 'slug' );

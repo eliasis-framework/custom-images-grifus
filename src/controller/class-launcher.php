@@ -3,10 +3,10 @@
  * Custom Images Grifus · Extensions For Grifus
  *
  * @author    Josantonius <hello@josantonius.com>
- * @package   Josantonius/Custom-Images-Grifus
+ * @package   eliasis-framework/custom-images-grifus
  * @copyright 2017 - 2018 (c) Josantonius - Custom Images Grifus
  * @license   GPL-2.0+
- * @link      https://github.com/Josantonius/Custom-Images-Grifus.git
+ * @link      https://github.com/eliasis-framework/custom-images-grifus.git
  * @since     1.0.0
  */
 
@@ -29,7 +29,6 @@ class Launcher extends Controller {
 		$state = Module::CustomImagesGrifus()->getOption( 'state' );
 
 		if ( 'active' === $state || 'outdated' === $state ) {
-
 			if ( is_admin() ) {
 				App::setCurrentID( 'EFG' );
 				$this->admin();
@@ -72,8 +71,8 @@ class Launcher extends Controller {
 		App::main()->set_menus( $pages, $namespace['admin-page'] );
 		$image = Module::CustomImagesGrifus()->getControllerInstance( 'Image' );
 
-		add_action( 'wp_insert_post', [ $image, 'setImages' ], 10, 3 );
-		add_action( 'before_delete_post', [ $image, 'deleteAttachedImages' ], 10, 1 );
+		add_action( 'wp_insert_post', [ $image, 'set_images' ], 10, 3 );
+		add_action( 'before_delete_post', [ $image, 'delete_attached_images' ], 10, 1 );
 	}
 
 	/**

@@ -13,6 +13,12 @@
     
    $(document).ready(function () {
 
+      if (typeof eliasis !== 'undefined') {
+         var copy_images_grifus = eliasis;
+      } else {
+         var copy_images_grifus = customImagesGrifusAdmin;
+      }
+
       /**
        * Replace images.
        *
@@ -21,19 +27,19 @@
       function ajaxReplace() {
 
          $.ajax({
-            url: eliasis.ajax_url,
+            url: copy_images_grifus.ajax_url,
             type: "post",
             data: {
-               action: 'replaceOldImages',
-               nonce : eliasis.nonce
+               action: 'replace_old_images',
+               nonce : copy_images_grifus.nonce
             },
             success:function(data) {
 
                var response = JSON.parse(data);
-
-               if (!response) { return; }
-
+               
                //console.log(response);
+               
+               if (!response) { return; }
 
                /** Get initial counters */
                var revised = new Number($("#film-title-badge").attr("data-badge"));
@@ -60,12 +66,9 @@
                } else {
                   
                   if (revised > 0) {
-
-                     var revisedText = eliasis.added_text;
-                  
+                     var revisedText = copy_images_grifus.added_text;
                   } else {
-
-                     var revisedText = eliasis.revised_text;
+                     var revisedText = copy_images_grifus.revised_text;
                   }
                   
                   /** Set films reviewed */
@@ -95,26 +98,22 @@
       function replaceWhenAdd(state) {
 
          $.ajax({
-            url: eliasis.ajax_url,
+            url: copy_images_grifus.ajax_url,
             type: "post",
             data: {
-               action:  'replaceWhenAdd',
+               action:  'replace_when_add',
                state:   state,
-               nonce:   eliasis.nonce
+               nonce:   copy_images_grifus.nonce
             },
             success:function(data) {
-
                var response = JSON.parse(data);
-
-               console.log(response);
+               //console.log(response);
 
             },
             error: function(errorThrown){
                //console.log(JSON.stringify(errorThrown));
             } 
-
          });
-
       }
 
       $("#replace-grifus-images").click(function(e) {
