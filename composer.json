@@ -35,7 +35,7 @@
         "eliasis-framework/complement"  : "^1.1.1",
         "Josantonius/WP_Register"       : "^1.0.5",
         "Josantonius/WP_Menu"           : "^1.0.3",
-        "Josantonius/WP_Image"          : "^1.0.7",
+        "Josantonius/WP_Image"          : "^1.0.3",
         "composer/installers"           : "^1.4.0"
     },
     "require-dev": {
