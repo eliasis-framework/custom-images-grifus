@@ -53,7 +53,7 @@ class Image extends Model {
 
 		$images       = get_post_meta( $post_id, 'imagenes', true );
 		$images_array = explode( "\n", $images );
-		$new_images = '';
+		$new_images   = '';
 
 		foreach ( $images_array as $image ) {
 			$image = trim( $image );
