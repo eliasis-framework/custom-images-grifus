@@ -1,71 +1,39 @@
 # Extensions For Grifus · Custom Images
 
-[![Latest Stable Version](https://poser.pugx.org/josantonius/custom-images-grifus/v/stable)](https://packagist.org/packages/josantonius/custom-images-grifus) [![Total Downloads](https://poser.pugx.org/josantonius/custom-images-grifus/downloads)](https://packagist.org/packages/josantonius/custom-images-grifus) [![Latest Unstable Version](https://poser.pugx.org/josantonius/custom-images-grifus/v/unstable)](https://packagist.org/packages/josantonius/custom-images-grifus) [![License](https://poser.pugx.org/josantonius/custom-images-grifus/license)](https://packagist.org/packages/josantonius/custom-images-grifus)
+[![Latest Stable Version](https://poser.pugx.org/eliasis-framework/custom-images-grifus/v/stable)](https://packagist.org/packages/eliasis-framework/custom-images-grifus) [![Latest Unstable Version](https://poser.pugx.org/eliasis-framework/custom-images-grifus/v/unstable)](https://packagist.org/packages/eliasis-framework/custom-images-grifus) [![License](https://poser.pugx.org/eliasis-framework/custom-images-grifus/license)](LICENSE) [![Codacy Badge](https://api.codacy.com/project/badge/Grade/470ef94b041048438a9127d4ee060ac4)](https://www.codacy.com/app/Josantonius/custom-images-grifus?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=eliasis-framework/custom-images-grifus&amp;utm_campaign=Badge_Grade) [![Total Downloads](https://poser.pugx.org/eliasis-framework/custom-images-grifus/downloads)](https://packagist.org/packages/eliasis-framework/custom-images-grifus) [![Travis](https://travis-ci.org/eliasis-framework/custom-images-grifus.svg)](https://travis-ci.org/eliasis-framework/custom-images-grifus) [![WP](https://img.shields.io/badge/WordPress-Standar-1abc9c.svg)](https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards/) [![CodeCov](https://codecov.io/gh/eliasis-framework/custom-images-grifus/branch/master/graph/badge.svg)](https://codecov.io/gh/eliasis-framework/custom-images-grifus)
 
 [Versión en español](README-ES.md)
 
-Save external IMDB images to your WordPress site.
+Custom Images Grifus replaces external IMDB images and saves them to your WordPress site.
 
 ![image](resources/banner-1544x500.png)
 
 ---
 
-- [Installation](#installation)
 - [Requirements](#requirements)
+- [Installation](#installation)
 - [Images](#images)
+- [Tests](#tests)
+- [TODO](#-todo)
 - [Contribute](#contribute)
-- [Licensing](#licensing)
+- [License](#license)
 - [Copyright](#copyright)
 
 ---
 
-Custom Images Grifus replaces external IMDB images and saves them to your WordPress site.
+## Requirements
 
-### Installation
+This module is supported by **PHP versions 5.6** or higher and is compatible with **HHVM versions 3.0** or higher.
 
-You can download this plugin from the [official repository](https://es.wordpress.org/plugins/extensions-for-grifus/) in WordPress.
+## Installation
 
-Install full plugin from [Composer](http://getcomposer.org/download/). In the root folder of WordPress run:
+You can download the full plugin from the [official repository](https://es.wordpress.org/plugins/extensions-for-grifus/) in WordPress.
 
-    $ composer require josantonius/extensions-for-grifus
+Or install plugin module from [Composer](http://getcomposer.org/download/). In the root folder of Extensions For Grifus plugin run:
 
-Install plugin module from [Composer](http://getcomposer.org/download/). In the root folder of Extensions For Grifus plugin run:
+    $ composer require eliasis-framework/custom-images-grifus
 
-    $ composer require josantonius/custom-rating-grifus
-
-The previous command will only install the necessary files, if you prefer to download the entire source code (including tests, vendor folder, sass files, docs...) you can use:
-
-    $ composer require josantonius/custom-rating-grifus --prefer-source
-
-Or you can also clone the complete repository with Git:
-
-	$ git clone https://github.com/Josantonius/Custom-Images-Grifus.git
-
-From your WordPress dashboard:
-
-	1. Visit 'Plugins > Add New'
-	2. Search for 'Extensions For Grifus'
-	3. Activate Extensions For Grifus from your Plugins page.
-	4. Access the Grifus Extensions menu.
-	5. Activate the modules you want to use.
-
-From WordPress.org:
-
-	1. Download [Extensions For Grifus](https://es.wordpress.org/plugins/extensions-for-grifus/).
-	2. Upload the 'extensions-for-grifus' directory to your '/wp-content/plugins/' directory, using your favorite method (ftp, sftp, scp, etc...).
-	3. Activate Extensions For Grifus from your Plugins page.
-	4. Access the Grifus Extensions menu.
-	5. Activate the modules you want to use.
-
-Once Activated:
-
-	Go to Grifus Extensions > Custom Images and click the button to replace all images.
-
-### Requirements
-
-This pluggin is supported by PHP versions 5.3 or higher and is compatible with HHVM versions 3.0 or higher.
-
-### Images
+## Images
 
 ![image](resources/screenshot-15.png)
 ![image](resources/screenshot-16.png)
@@ -75,22 +43,58 @@ This pluggin is supported by PHP versions 5.3 or higher and is compatible with H
 ![image](resources/screenshot-20.png)
 ![image](resources/screenshot-21.png)
 
-### Contribute
-1. Check for open issues or open a new issue to start a discussion around a bug or feature.
-1. Fork the repository on GitHub to start making your changes.
-1. Write one or more tests for the new feature or that expose the bug.
-1. Make code changes to implement the feature or fix the bug.
-1. Send a pull request to get your changes merged and published.
+## Tests 
 
-This is intended for large and long-lived objects.
+To run [tests](tests) you just need [composer](http://getcomposer.org/download/) and to execute the following:
 
-### Licensing
+    $ git clone https://github.com/eliasis-framework/custom-images-grifus.git
+    
+    $ cd custom-images-grifus
 
-This project is licensed under **GPL-2.0+**. See the [LICENSE](LICENSE) file for more info.
+    $ composer install
 
-### Copyright
+Run [WordPress](https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards/) code standard tests with [PHPCS](https://github.com/squizlabs/PHP_CodeSniffer):
 
-2017 Josantonius, [josantonius.com](https://josantonius.com/)
+    $ composer phpcs
+
+Run [PHP Mess Detector](https://phpmd.org/) tests to detect inconsistencies in code style:
+
+    $ composer phpmd
+
+Run all previous tests:
+
+    $ composer tests
+
+[PHPUnit](https://phpunit.de/): Unit tests for this module will be performed in the [plugin](https://github.com/Josantonius/extensions-for-grifus#tests) repository.
+
+## ☑ TODO
+
+- [ ] Add new feature.
+- [ ] Improve documentation.
+- [ ] Refactor code for disabled code style rules. See [phpmd.xml](phpmd.xml) and [.php_cs.dist](.php_cs.dist).
+
+## Contribute
+
+If you would like to help, please take a look at the list of
+[issues](https://github.com/eliasis-framework/custom-images-grifus/issues) or the [To Do](#-todo) checklist.
+
+**Pull requests**
+
+* [Fork and clone](https://help.github.com/articles/fork-a-repo).
+* Run the command `composer install` to install the dependencies.
+  This will also install the [dev dependencies](https://getcomposer.org/doc/03-cli.md#install).
+* Run the command `composer fix` to excute code standard fixers.
+* Run the [tests](#tests).
+* Create a **branch**, **commit**, **push** and send me a
+  [pull request](https://help.github.com/articles/using-pull-requests).
+
+## License
+
+This project is licensed under **GPL-2.0+ license**. See the [LICENSE](LICENSE) file for more info.
+
+## Copyright
+
+2017 - 2018 Josantonius, [josantonius.com](https://josantonius.com/)
 
 If you find it useful, let me know :wink:
 
