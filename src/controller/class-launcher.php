@@ -67,7 +67,7 @@ class Launcher extends Controller {
 		add_action( 'init', [ $this, 'set_language' ] );
 
 		$namespace = Module::CustomImagesGrifus()->getOption( 'namespaces' );
-		$pages = Module::CustomImagesGrifus()->getOption( 'pages' );
+		$pages     = Module::CustomImagesGrifus()->getOption( 'pages' );
 		App::main()->set_menus( $pages, $namespace['admin-page'] );
 		$image = Module::CustomImagesGrifus()->getControllerInstance( 'Image' );
 
@@ -82,7 +82,7 @@ class Launcher extends Controller {
 	 */
 	public function set_options() {
 
-		$slug = Module::CustomImagesGrifus()->getOption( 'slug' );
+		$slug    = Module::CustomImagesGrifus()->getOption( 'slug' );
 		$options = $this->model->get_options();
 
 		foreach ( $options as $option => $value ) {
@@ -97,6 +97,7 @@ class Launcher extends Controller {
 
 		$plugin_slug = App::EFG()->getOption( 'slug' );
 		$module_slug = Module::CustomImagesGrifus()->getOption( 'slug' );
+
 		$path = $plugin_slug . '/modules/' . $module_slug . '/languages/';
 
 		load_plugin_textdomain( $plugin_slug . '-images', false, $path );

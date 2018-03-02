@@ -21,7 +21,7 @@ use Eliasis\Complement\Type\Module;
 /**
  * Handler Custom Images Grifus page.
  */
-class CustomImages extends Controller {
+class Custom_Images extends Controller {
 
 	/**
 	 * Slug for this administration page.

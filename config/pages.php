@@ -11,5 +11,5 @@
  */
 
 return [
-	'pages' => [ 'CustomImages' ],
+	'pages' => [ 'Custom_Images' ],
 ];

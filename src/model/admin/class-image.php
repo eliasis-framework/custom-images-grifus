@@ -33,8 +33,8 @@ class Image extends Model {
 			return 0; }
 
 		update_post_meta( $post_id, 'custom_images_grifus', 'true' );
-		$count = 0;
-		$tmdb = 'image.tmdb.org';
+		$count  = 0;
+		$tmdb   = 'image.tmdb.org';
 		$poster = get_post_meta( $post_id, 'poster_url', true );
 
 		if ( filter_var( $poster, FILTER_VALIDATE_URL ) && strpos( $poster, $tmdb ) ) {
@@ -51,7 +51,7 @@ class Image extends Model {
 			update_post_meta( $post_id, 'fondo_player', $main );
 		}
 
-		$images = get_post_meta( $post_id, 'imagenes', true );
+		$images       = get_post_meta( $post_id, 'imagenes', true );
 		$images_array = explode( "\n", $images );
 		$new_images = '';
 
@@ -60,6 +60,7 @@ class Image extends Model {
 			if ( filter_var( $image, FILTER_VALIDATE_URL ) && strpos( $image, $tmdb ) ) {
 				$count++;
 				$url = WP_Image::save( $image, $post_id );
+
 				$new_images .= $url . "\n";
 			}
 		}
@@ -106,7 +107,9 @@ class Image extends Model {
 
 		if ( ! is_null( $post ) && isset( $post->ID ) && isset( $post->post_title ) ) {
 			$post_id = $post->ID;
+
 			$images_added = $this->set_images( $post->ID );
+
 			$response = [
 				'post_id'      => $post->ID,
 				'post_title'   => $post->post_title,
